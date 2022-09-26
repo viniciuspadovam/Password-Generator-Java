@@ -2,13 +2,12 @@ import java.util.Scanner;
 
 public class PassGenerator {
     public static void main(String[] args) {
-        //clearConsole();
+        clearConsole();
 
         String password = "";
 
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("\n");
         System.out.println("============== GERADOR DE SENHAS - JAVA ==============\n");
 
         // --- GET INPUT ---
@@ -53,8 +52,7 @@ public class PassGenerator {
 
     public static void clearConsole() {
         try {
-            if (System.getProperty("os.name").contains("Windows")) new ProcessBuilder("cls").inheritIO().start().waitFor();
-            else new ProcessBuilder("clear").inheritIO().start().waitFor();
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
           } catch(Exception e) {
             e.printStackTrace();
         }
